@@ -18,7 +18,7 @@ const login = async (req,res=response)=>{
         if(!user){
             return res.status(400).json({
                 ok: false,
-                msg: 'Esta cuenta no esta registrada'
+                msg: 'El correo o la contraseña es incorrecta'
             })
         }
 
