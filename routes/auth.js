@@ -28,7 +28,7 @@ router.post(
     '/register', 
     [   //middleware de express-validator
         check('name', 'El nombre es requerido').not().isEmpty(),
-        check('name', 'Este campo solo admite letras').matches(/^[A-Za-záéíóúÁÉÍÓÚ\s]+$/),
+        check('name', 'El nombre solo debe llevar letras').matches(/^[A-Za-záéíóúÁÉÍÓÚ\s]+$/),
         check('email', 'El email es requerido').not().isEmpty(),
         check('email', 'La estructura del email no es valida').isEmail(),
         check('password', 'La contraseña es requerida').not().isEmpty(),
