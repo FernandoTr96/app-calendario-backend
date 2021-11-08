@@ -41,7 +41,7 @@ router.post(
 );
 
 //renovar el token 
-router.get('/revalidar-token', validateJWT ,revalidarToken);
+router.get('/revalidate-token', validateJWT ,revalidarToken);
 
 //exportar modulo con nuestas rutas
 module.exports = router;
