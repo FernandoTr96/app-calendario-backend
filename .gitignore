@@ -1,2 +1,5 @@
+#git rm -rf --cached .   borrar cache
+
 /node_modules
 /readme.md
+
