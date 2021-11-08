@@ -86,9 +86,9 @@ const register = async (req,res=response)=>{
 
         res.status(201).json({
             ok: true,
-            msg: `El usuario [ ${user.name} ] fue registrado !!`,
             uid: user.id,
             name: user.name,
+            email: user.email,
             token
         })
         
