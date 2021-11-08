@@ -33,7 +33,7 @@ const login = async (req,res=response)=>{
         }
 
         //si coinciden generar JWT https://www.npmjs.com/package/jsonwebtoken
-        const token = await generateJWT(user.id, user.name);
+        const token = await generateJWT(user.id, user.name, user.email);
         
         res.status(201).json({
             ok: true,
@@ -82,7 +82,7 @@ const register = async (req,res=response)=>{
         await user.save();   
 
         //generar JWT https://www.npmjs.com/package/jsonwebtoken
-        const token = await generateJWT(user.id, user.name);
+        const token = await generateJWT(user.id, user.name, user.email);
 
         res.status(201).json({
             ok: true,
@@ -105,13 +105,14 @@ const register = async (req,res=response)=>{
 
 const revalidarToken =  async (req,res=response)=>{
     
-    const {uid,name} = req.auth;
-    const token = await generateJWT(uid,name);
+    const {uid,name,email} = req.auth;
+    const token = await generateJWT(uid,name,email);
 
     if(token){
         return res.status(201).json({
             ok: true,
-            token
+            token,
+
         })
     }
 

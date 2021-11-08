@@ -1,13 +1,14 @@
 const jwt = require('jsonwebtoken');
 require('dotenv').config();
 
-const generateJWT = (uid,name)=>{
+const generateJWT = (uid,name,email)=>{
 
     return new Promise((resolve, reject)=>{
 
         const payload = {
             uid,
-            name
+            name,
+            email
         }
 
         jwt.sign(payload, process.env.JWTKEY, {
