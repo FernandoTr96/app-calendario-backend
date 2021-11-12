@@ -23,10 +23,10 @@ router.post(
     [
         check('title','El titulo es requerido').not().isEmpty(),
         check('desc','La descripcion es requerida').not().isEmpty(),
-        check('startDate','La fecha inicial es requerida').not().isEmpty(),
-        check('startDate','La fecha inicial es requerida').custom(isDate),
-        check('endDate','La fecha final es requerida').not().isEmpty(),
-        check('endDate','La fecha final es requerida').custom(isDate),
+        check('start','La fecha inicial es requerida').not().isEmpty(),
+        check('end','La fecha inicial es requerida').custom(isDate),
+        check('end','La fecha final es requerida').not().isEmpty(),
+        check('end','La fecha final es requerida').custom(isDate),
         errorMiddleware
     ], 
     addEvent
