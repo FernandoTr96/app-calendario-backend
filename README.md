@@ -11,4 +11,4 @@ api rest para la aplicacion de calendario
 + moment js
 + cors
 + bcrypt
-+ moment js
+
